@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>bSoul · Il Rituale Sorridimi · bozza riservata</title>
+  <style>
+    :root{--bg:#f2e9e4;--card:#ffffff;--ink:#414833;--muted:#6e6259;--green:#656d4a;--green-dark:#414833;--line:#d9cfc8}
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+      font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .gate{width:min(100%,430px);border:1px solid var(--line);background:var(--card);padding:34px}
+    .label{margin:0 0 12px;color:var(--green);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+    h1{margin:0;font-family:"Belleza",Georgia,serif;font-size:clamp(24px,5vw,30px);line-height:1.15;font-weight:400}
+    p{margin:14px 0 24px;color:var(--muted);font-size:15px;line-height:1.55}
+    form{display:grid;gap:12px}
+    input,button{width:100%;min-height:48px;font:inherit;font-size:15px;border-radius:0}
+    input{border:1px solid var(--line);background:#fff;color:var(--ink);padding:0 14px;outline:none}
+    input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(101,109,74,.25)}
+    button{border:0;background:var(--green);color:#fff;font-weight:600;cursor:pointer;letter-spacing:.06em;font-size:14px}
+    button:hover,button:focus-visible{background:var(--green-dark)}
+    .error{min-height:18px;color:#a3402f;font-size:13px}
+    iframe{display:none;width:100vw;height:100vh;border:0;background:#f2e9e4}
+    body.unlocked{display:block;min-height:100vh;padding:0;overflow:hidden}
+    body.unlocked .gate{display:none}
+    body.unlocked iframe{display:block}
+    @media (max-width:520px){body{padding:16px}.gate{padding:26px 22px}}
+  </style>
+</head>
+<body>
+  <main class="gate" aria-labelledby="page-title">
+    <div class="label">bSoul · Bozza riservata</div>
+    <h1 id="page-title">Il Rituale Sorridimi</h1>
+    <p>Inserisci la password ricevuta per leggere la pagina di vendita impaginata.</p>
+    <form id="password-form" autocomplete="off">
+      <input id="password" type="password" placeholder="Password" aria-label="Password" autofocus>
+      <button type="submit">Entra</button>
+      <div class="error" id="error" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <iframe id="content" src="content.html" title="Il Rituale Sorridimi, bozza" allow="clipboard-write"></iframe>
+
+  <script>
+    const PASSWORD = "Minima05";
+    const SESSION_KEY = "bsoul_landing_sorridimi_auth";
+
+    function unlock(){ document.body.classList.add("unlocked"); }
+
+    if (sessionStorage.getItem(SESSION_KEY) === PASSWORD) { unlock(); }
+
+    document.getElementById("password-form").addEventListener("submit", function(event){
+      event.preventDefault();
+      const input = document.getElementById("password");
+      const error = document.getElementById("error");
+
+      if (input.value === PASSWORD) {
+        sessionStorage.setItem(SESSION_KEY, PASSWORD);
+        unlock();
+        return;
+      }
+
+      error.textContent = "Password non valida";
+      input.value = "";
+      input.focus();
+    });
+  </script>
+</body>
+</html>

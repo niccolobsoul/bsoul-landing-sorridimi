@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anteprima: Il Rituale Sorridimi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belleza&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Simula il tema: pagina larga come il contenitore di Flatsome e regole globali "invadenti", per verificare che il blocco regga. */
+html{font-size:100%}
+body{margin:0;background:#fff;font-family:Arial,sans-serif;color:#333;font-size:16px;line-height:1.6}
+.pv-page{max-width:1080px;margin:0 auto;padding:0 15px}
+h1,h2,h3{font-family:Arial,sans-serif;color:#555;margin:0 0 .5em;text-transform:none;font-weight:700}
+p{margin-bottom:1.3em}
+a{color:#0073aa}
+ul,ol{margin:0 0 1em 1.3em}
+li{margin-bottom:.6em}
+img{max-width:100%;height:auto}
+</style>
+</head>
+<body>
+<div class="pv-page">
+<!--
+  BLOCCO INCOLLABILE: IL RITUALE SORRIDIMI (landing di vendita)
+  COME INCOLLARLO (6 righe):
+  1. Su bsoul.it crea una pagina nuova (consigliato il modello di pagina a tutta larghezza, senza sidebar).
+  2. Aggiungi un blocco "HTML personalizzato" (editor a blocchi). Meglio questo dell'elemento HTML di Flatsome, che può aggiungere <p> e <br> in più.
+  3. Incolla TUTTO questo file, dal primo <style> all'ultimo </div>, senza modificare nulla.
+  4. Fai la ricerca e sostituisci di #LINK-ACQUISTO con il link vero del prodotto (compare 3 volte).
+  5. Sostituisci le 7 foto: per ognuna c'è un <img> commentato col nome del file (hero_martina_prodotto, balsamo, patch, qr_video, rituale_massaggio, martina_sorride, kit_completo): togli i simboli di commento e metti il link vero al posto di SOSTITUIRE-con-link-di-... (la foto copre il riquadro).
+  6. Le 6 domande frequenti sono chiuse (elementi details): un pallino giallo accanto alla domanda segnala che dentro c'è un riquadro giallo da risolvere (togli la classe sorr-has-marker dalla riga summary quando lo risolvi). Quando arrivano le risposte, rimuovi o correggi i riquadri gialli [DA CONFERMARE] e [DA VERIFICARE] (cerca la classe sorr-da-confermare). Quando la vendita si apre a tutte, togli il blocco fra INIZIO STRISCIA CLUB e FINE STRISCIA CLUB.
+  DA SOSTITUIRE: 1) #LINK-ACQUISTO (3 volte); 2) le 7 foto: hero, balsamo, patch, QR e video, rituale (massaggio), perché adesso (Martina sorridente), kit completo (in apertura del blocco «tutto in un punto»); 3) tutti i riquadri .sorr-da-confermare (9 occorrenze); 4) la striscia Club, a vendita aperta.
+  FONT: i titoli usano Belleza e il testo Montserrat. Se il tema non li carica già, la pagina usa serif e sans-serif di sistema (resta leggibile ma meno a marchio).
+  VARIANTE DI TITOLO per un test, non in pagina: «Le tue labbra, un balsamo che sa di amarena e un massaggio da fare con me»
+-->
+<style>
+.sorr-landing{--sorr-prim:#bcc482;--sorr-mid:#656d4a;--sorr-dark:#414833;--sorr-cream:#f2e9e4;--sorr-gold:#a68a64;--sorr-brown:#582f0e;--sorr-gray:#6e6259;--sorr-amarena:#7a1212;display:block;margin:0;padding:0;font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;font-size:18px;line-height:1.75;font-weight:400;color:var(--sorr-gray);text-align:left;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+.sorr-landing *,.sorr-landing *::before,.sorr-landing *::after{box-sizing:border-box}
+.sorr-landing p{margin:0 0 1.15em;padding:0;font-size:inherit;line-height:inherit;color:inherit}
+.sorr-landing p:last-child{margin-bottom:0}
+.sorr-landing strong{font-weight:700}
+.sorr-landing ul,.sorr-landing ol{margin:0;padding:0;list-style:none}
+.sorr-landing li{margin:0;padding:0}
+.sorr-landing figure{margin:0;padding:0}
+.sorr-landing img{display:block;max-width:100%;height:auto}
+.sorr-landing .sorr-sec{position:relative;background:var(--sorr-bg);box-shadow:0 0 0 100vmax var(--sorr-bg);clip-path:inset(0 -100vmax);padding:80px 20px;overflow:visible}
+.sorr-landing .sorr-sec--cream{--sorr-bg:var(--sorr-cream)}
+.sorr-landing .sorr-sec--white{--sorr-bg:#ffffff}
+.sorr-landing .sorr-sec--dark{--sorr-bg:var(--sorr-dark);color:var(--sorr-cream)}
+.sorr-landing .sorr-sec--mid{--sorr-bg:var(--sorr-mid);color:#ffffff}
+.sorr-landing .sorr-sec--club{--sorr-bg:var(--sorr-prim);color:var(--sorr-dark);padding:22px 20px}
+.sorr-landing .sorr-wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto}
+.sorr-landing .sorr-narrow{max-width:680px;margin:0 auto}
+.sorr-landing .sorr-club-text{max-width:820px;margin:0 auto;text-align:center;font-size:17px;line-height:1.6;color:var(--sorr-dark)}
+.sorr-landing .sorr-h1,.sorr-landing .sorr-h2{font-family:Belleza,Georgia,"Times New Roman",serif;font-weight:400;text-transform:uppercase;color:var(--sorr-dark);margin:0 0 28px;padding:0;letter-spacing:.04em;line-height:1.25;text-align:left;overflow-wrap:break-word}
+.sorr-landing .sorr-h1{font-size:clamp(28px,7.2vw,52px);line-height:1.18}
+.sorr-landing .sorr-h2{font-size:clamp(25px,5.6vw,40px)}
+.sorr-landing .sorr-sec--dark .sorr-h2,.sorr-landing .sorr-sec--mid .sorr-h2{color:#ffffff}
+.sorr-landing .sorr-h3{font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:19px;line-height:1.4;color:var(--sorr-dark);margin:0 0 6px;padding:0;text-transform:none;letter-spacing:0}
+.sorr-landing .sorr-lead{font-size:clamp(18px,2.6vw,20px);font-weight:500;line-height:1.65;color:var(--sorr-dark);margin:0 0 30px}
+.sorr-landing .sorr-big{font-size:clamp(19px,3vw,22px);line-height:1.7}
+.sorr-landing .sorr-big-tight{font-size:clamp(20px,3.2vw,24px);font-weight:600;line-height:1.5}
+.sorr-landing .sorr-hero::before{content:"";position:absolute;z-index:0;right:0;top:0;width:620px;max-width:100%;aspect-ratio:1/1;background:radial-gradient(closest-side,rgba(188,196,130,.34),rgba(188,196,130,0));pointer-events:none}
+.sorr-landing .sorr-hero::after{content:"";position:absolute;z-index:0;left:0;bottom:0;width:480px;max-width:100%;aspect-ratio:1/1;background:radial-gradient(closest-side,rgba(166,138,100,.16),rgba(166,138,100,0));pointer-events:none}
+.sorr-landing .sorr-hero{padding-top:56px}
+.sorr-landing .sorr-hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:center}
+.sorr-landing .sorr-frame{position:relative;padding:0 16px 16px 0}
+.sorr-landing .sorr-frame::before{content:"";position:absolute;right:0;bottom:0;width:calc(100% - 16px);height:calc(100% - 16px);background:rgba(188,196,130,.38);border-radius:16px}
+.sorr-landing .sorr-photo{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;border-radius:16px;overflow:hidden;background:#e3d6ca;text-align:center}
+.sorr-landing .sorr-photo--hero,.sorr-landing .sorr-photo--tall,.sorr-landing .sorr-photo--sq{aspect-ratio:1/1}
+.sorr-landing .sorr-photo--row{aspect-ratio:5/4}
+.sorr-landing .sorr-photo--wide{aspect-ratio:3/2;margin:0 0 36px}
+.sorr-landing .sorr-offer .sorr-photo--wide{margin:-32px -20px 32px;border-radius:16px 16px 0 0}
+.sorr-landing .sorr-rows{margin-top:48px}
+.sorr-landing .sorr-row{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:center}
+.sorr-landing .sorr-row+.sorr-row{margin-top:64px}
+.sorr-landing .sorr-row .sorr-h3{font-size:22px;margin-bottom:10px}
+.sorr-landing .sorr-row p{margin:0 0 .7em}
+.sorr-landing .sorr-why,.sorr-landing .sorr-ritual-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center}
+.sorr-landing .sorr-steps-card{margin-top:56px;max-width:760px}
+.sorr-landing .sorr-faq{border-bottom:1px solid rgba(166,138,100,.55)}
+.sorr-landing .sorr-faq details{border-top:1px solid rgba(166,138,100,.55)}
+.sorr-landing .sorr-faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:14px 4px;cursor:pointer;list-style:none;color:var(--sorr-dark)}
+.sorr-landing .sorr-faq summary::-webkit-details-marker{display:none}
+.sorr-landing .sorr-faq summary::marker{content:""}
+.sorr-landing .sorr-faq summary .sorr-h3{flex:1 1 auto;margin:0}
+.sorr-landing .sorr-faq summary::after{content:"";flex:0 0 auto;width:11px;height:11px;margin:-5px 6px 0 0;border-right:2px solid var(--sorr-mid);border-bottom:2px solid var(--sorr-mid);transform:rotate(45deg);transition:transform .2s ease,margin .2s ease}
+.sorr-landing .sorr-faq details[open] summary::after{transform:rotate(-135deg);margin-top:5px}
+.sorr-landing .sorr-faq summary:hover .sorr-h3{color:var(--sorr-mid)}
+.sorr-landing .sorr-faq summary:focus-visible{outline:3px solid var(--sorr-brown);outline-offset:2px;border-radius:6px}
+.sorr-landing .sorr-faq summary.sorr-has-marker .sorr-h3::after{content:"";display:inline-block;width:10px;height:10px;margin-left:10px;border-radius:50%;background:#fff6c7;border:2px dashed #b08a00;vertical-align:middle}
+.sorr-landing .sorr-faq-body{padding:0 4px 28px}
+.sorr-landing .sorr-faq-body p{margin:0 0 .6em}
+.sorr-landing .sorr-closing .sorr-photo{margin:0 auto 48px}
+.sorr-landing .sorr-photo img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;z-index:2;border-radius:0}
+.sorr-landing .sorr-ph-label{position:relative;z-index:1;display:block;max-width:80%;padding:16px 20px;border:2px dashed rgba(65,72,51,.45);border-radius:12px;font-size:16px;font-weight:600;line-height:1.45;color:var(--sorr-dark)}
+.sorr-landing .sorr-ph-label small{display:block;margin-top:4px;font-size:14px;font-weight:500;color:var(--sorr-gray)}
+.sorr-landing .sorr-pricebox{margin:0 0 32px;padding:0 0 0 20px;border-left:3px solid var(--sorr-amarena)}
+.sorr-landing .sorr-pricebox p{margin:0}
+.sorr-landing .sorr-price-line{font-size:19px;line-height:1.4;color:var(--sorr-dark)}
+.sorr-landing .sorr-price{color:var(--sorr-amarena);font-size:1.5em;line-height:1;white-space:nowrap}
+.sorr-landing .sorr-small{font-size:16px;line-height:1.6}
+.sorr-landing .sorr-btnrow{margin:0}
+.sorr-landing a.sorr-btn,.sorr-landing a.sorr-btn:link,.sorr-landing a.sorr-btn:visited{display:flex;align-items:center;justify-content:center;width:100%;max-width:440px;min-height:58px;padding:16px 24px;border:0;border-radius:12px;font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;font-size:17px;font-weight:600;line-height:1.3;letter-spacing:.01em;text-align:center;text-decoration:none;text-transform:none;cursor:pointer;transition:background-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.sorr-landing a.sorr-btn.sorr-btn--light,.sorr-landing a.sorr-btn.sorr-btn--light:link,.sorr-landing a.sorr-btn.sorr-btn--light:visited{background:var(--sorr-mid);color:#ffffff;box-shadow:0 8px 20px rgba(65,72,51,.18)}
+.sorr-landing a.sorr-btn.sorr-btn--light:hover{background:#565d3e;color:#ffffff;transform:translateY(-2px)}
+.sorr-landing a.sorr-btn.sorr-btn--dark,.sorr-landing a.sorr-btn.sorr-btn--dark:link,.sorr-landing a.sorr-btn.sorr-btn--dark:visited{background:var(--sorr-prim);color:var(--sorr-dark)}
+.sorr-landing a.sorr-btn.sorr-btn--dark:hover{background:#cdd49a;color:var(--sorr-dark);transform:translateY(-2px)}
+.sorr-landing a.sorr-btn:focus-visible{outline:3px solid var(--sorr-brown);outline-offset:3px}
+.sorr-landing .sorr-sec--dark a.sorr-btn:focus-visible,.sorr-landing .sorr-sec--mid a.sorr-btn:focus-visible{outline-color:#ffffff}
+.sorr-landing .sorr-da-confermare{margin:16px 0;padding:10px 14px;background:#fff6c7;border:2px dashed #b08a00;border-radius:8px;color:#4a3b00;font-size:16px;font-weight:500;line-height:1.5}
+.sorr-landing .sorr-da-confermare.sorr-inline{display:inline;margin:0;padding:2px 8px;font-size:inherit;line-height:inherit;text-decoration:underline;white-space:normal}
+.sorr-landing .sorr-ship{margin-top:8px}
+.sorr-landing .sorr-split{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.sorr-landing .sorr-sec--dark .sorr-split p{font-size:clamp(19px,2.8vw,21px);color:var(--sorr-cream)}
+.sorr-landing .sorr-emph{font-weight:700;color:var(--sorr-prim)}
+.sorr-landing .sorr-sec--dark .sorr-split p.sorr-emph{color:var(--sorr-prim)}
+.sorr-landing .sorr-num{font-family:Belleza,Georgia,serif;font-weight:400;font-size:1.5em;line-height:1;color:var(--sorr-gold);margin-right:6px}
+.sorr-landing .sorr-card{background:var(--sorr-cream);border-radius:16px;padding:28px 24px}
+.sorr-landing .sorr-label{font-weight:700;color:var(--sorr-dark);margin:0 0 14px}
+.sorr-landing .sorr-steps li{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-top:1px solid rgba(166,138,100,.5)}
+.sorr-landing .sorr-steps li:first-child{border-top:0;padding-top:0}
+.sorr-landing .sorr-step-n{flex:0 0 auto;min-width:36px;font-family:Belleza,Georgia,serif;font-size:34px;line-height:1.1;color:var(--sorr-gold)}
+.sorr-landing .sorr-step-t{flex:1 1 auto;min-width:0}
+.sorr-landing .sorr-moment{margin-top:40px}
+.sorr-landing .sorr-offer{background:#ffffff;border-radius:16px;padding:32px 20px;box-shadow:0 18px 48px rgba(65,72,51,.12)}
+.sorr-landing .sorr-inside li{position:relative;padding:12px 0 12px 26px;border-top:1px solid rgba(166,138,100,.4);color:var(--sorr-dark)}
+.sorr-landing .sorr-inside li:first-child{border-top:0}
+.sorr-landing .sorr-inside li::before{content:"";position:absolute;left:2px;top:1.15em;width:10px;height:10px;border-radius:50%;background:var(--sorr-prim)}
+.sorr-landing .sorr-bigprice{font-size:clamp(22px,4vw,28px);font-weight:700;line-height:1.3;color:var(--sorr-amarena);margin:28px 0 6px}
+.sorr-landing .sorr-closing{text-align:center}
+.sorr-landing .sorr-closing .sorr-h2{text-align:center}
+.sorr-landing .sorr-closing p{color:var(--sorr-cream);font-size:clamp(19px,2.8vw,21px)}
+.sorr-landing .sorr-closing .sorr-btnrow{display:flex;justify-content:center;margin:34px 0}
+.sorr-landing .sorr-sign{margin:0 0 4px;font-family:Belleza,Georgia,serif;font-size:26px;line-height:1.3;color:var(--sorr-prim)}
+.sorr-landing .sorr-closing p.sorr-sign{color:var(--sorr-prim);font-size:26px}
+.sorr-landing .sorr-ps{margin-top:44px;padding-top:32px;border-top:1px solid rgba(188,196,130,.5)}
+.sorr-landing .sorr-ps .sorr-btnrow{margin:22px 0 0}
+.sorr-landing .sorr-hero-text,.sorr-landing .sorr-photo-wrap{animation:sorr-rise .5s ease-out both}
+.sorr-landing .sorr-hero-text{animation-delay:.1s}
+@keyframes sorr-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.sorr-landing .sorr-faq summary::after{transition:none}.sorr-landing .sorr-hero-text,.sorr-landing .sorr-photo-wrap{animation:none}.sorr-landing a.sorr-btn{transition:none}.sorr-landing a.sorr-btn:hover{transform:none}}
+@media (min-width:768px){
+.sorr-landing{font-size:19px}
+.sorr-landing .sorr-sec{padding:120px 24px}
+.sorr-landing .sorr-sec--club{padding:24px}
+.sorr-landing .sorr-hero{padding-top:88px}
+.sorr-landing .sorr-hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px}
+.sorr-landing .sorr-photo--hero{aspect-ratio:4/5}
+.sorr-landing .sorr-photo--tall{aspect-ratio:4/5}
+.sorr-landing .sorr-photo-wrap{order:2}
+.sorr-landing .sorr-hero-text{order:1}
+.sorr-landing .sorr-frame{padding:0 24px 24px 0}
+.sorr-landing .sorr-frame::before{width:calc(100% - 24px);height:calc(100% - 24px)}
+.sorr-landing .sorr-split{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px;align-items:start}
+.sorr-landing .sorr-card{padding:40px 36px}
+.sorr-landing .sorr-offer{padding:56px 56px}
+.sorr-landing .sorr-offer .sorr-photo--wide{margin:-56px -56px 44px}
+.sorr-landing a.sorr-btn{width:auto;min-width:340px}
+.sorr-landing .sorr-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px}
+.sorr-landing .sorr-row--flip .sorr-row-img{order:2}
+.sorr-landing .sorr-row+.sorr-row{margin-top:96px}
+.sorr-landing .sorr-rows{margin-top:72px}
+.sorr-landing .sorr-why{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:72px}
+.sorr-landing .sorr-ritual-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px}
+.sorr-landing .sorr-faq summary{padding:16px 8px}
+.sorr-landing .sorr-faq-body{padding:0 8px 32px}
+}
+</style>
+<div class="sorr-landing" lang="it">
+<!-- INIZIO STRISCIA CLUB: togliere questo blocco quando la vendita si apre a tutte -->
+<div class="sorr-club">
+<div class="sorr-sec sorr-sec--club">
+<p class="sorr-club-text"><strong>Per le bSoulline Gold, VIP e Platinum:</strong> il Rituale Sorridimi si apre per voi prima che per tutte le altre. Essendo un'edizione limitata, fino a esaurimento scorte, hai la certezza di poterlo avere.</p>
+</div>
+</div>
+<!-- FINE STRISCIA CLUB -->
+<section class="sorr-sec sorr-sec--cream sorr-hero">
+<div class="sorr-wrap sorr-hero-grid">
+<div class="sorr-photo-wrap">
+<div class="sorr-frame">
+<figure class="sorr-photo sorr-photo--hero">
+<img src="assets/hero_martina_prodotto.jpg" alt="Martina insieme al prodotto Il Rituale Sorridimi" width="1600" height="2000" loading="eager">
+</figure>
+</div>
+</div>
+<div class="sorr-hero-text">
+<h1 class="sorr-h1">Sorridimi: il balsamo labbra all'amarena, con un rituale da fare insieme a me</h1>
+<p class="sorr-lead">Il balsamo intensivo labbra Sorridimi, gusto amarena, in un flacone da 15 ml, un patch in silicone da riutilizzare, in una scatolina di metallo, e il video in cui faccio il massaggio con te. Tutto nella stessa scatola, per festeggiare i 15 anni di bSoul.</p>
+<div class="sorr-pricebox">
+<p class="sorr-price-line"><strong>Il Rituale Sorridimi: <span class="sorr-price">47 €</span>, prezzo di lancio fino al 29 ottobre</strong></p>
+<p class="sorr-small">Edizione limitata, fino a esaurimento scorte.</p>
+</div>
+<p class="sorr-btnrow"><a class="sorr-btn sorr-btn--light" href="#LINK-ACQUISTO">Ordina il Rituale Sorridimi</a></p>
+</div>
+</div>
+</section>
+<section class="sorr-sec sorr-sec--dark">
+<div class="sorr-wrap sorr-split">
+<h2 class="sorr-h2">Quando sorridi, ci pensi?</h2>
+<div>
+<p>Ti è mai capitato di sorridere in una foto e, un attimo dopo, di controllare sul telefono come sei venuta?</p>
+<p>Il «codice a barre» intorno alla bocca, come lo chiamiamo tra noi grandicelle, lo conosciamo bene.</p>
+<p>Io vorrei per te un sorriso che non ha bisogno di essere "controllato".</p>
+<p class="sorr-emph">È così che nasce il Rituale Sorridimi: un balsamo per le labbra che sa di amarena, e un momento tuo per prendertene cura.</p>
+</div>
+</div>
+</section>
+<section class="sorr-sec sorr-sec--cream">
+<div class="sorr-wrap">
+<h2 class="sorr-h2">Cosa trovi nella scatola</h2>
+<p class="sorr-big">Tre cose, pensate per stare insieme.</p>
+<div class="sorr-rows">
+<div class="sorr-row">
+<div class="sorr-row-img">
+<figure class="sorr-photo sorr-photo--row">
+<img src="assets/balsamo.png" alt="Il flacone del balsamo intensivo labbra Sorridimi, gusto amarena, 15 ml" width="1402" height="1122" loading="lazy">
+</figure>
+</div>
+<div class="sorr-row-text">
+<h3 class="sorr-h3"><span class="sorr-num">1.</span> Il balsamo intensivo labbra Sorridimi</h3>
+<p>Della linea Trisoul Pro-Age, in un flacone da 15 ml, ricco di burri. Ha il gusto amarena: un piccolo piacere in più, ogni volta che lo usi.</p>
+<p>Dentro ci sono peptide Matrixyl synthe'6, burri biologici, ceramidi NP e acido ialuronico.</p>
+<p class="sorr-da-confermare">[DA VERIFICARE: ingredienti indicati da Martina, perché l'elenco completo (INCI) non è visibile sull'etichetta; e una frase semplice, approvata da lei, su cosa fanno questi ingredienti per le labbra]</p>
+</div>
+</div>
+<div class="sorr-row sorr-row--flip">
+<div class="sorr-row-img">
+<figure class="sorr-photo sorr-photo--row">
+<img src="assets/patch.jpg" alt="Il patch in silicone riutilizzabile del Rituale Sorridimi" width="1800" height="1371" loading="lazy">
+</figure>
+</div>
+<div class="sorr-row-text">
+<h3 class="sorr-h3"><span class="sorr-num">2.</span> Un patch in silicone, riutilizzabile</h3>
+<p>Lo lavi con acqua e sapone neutro e lo riusi. Sta in una scatolina di metallo con la scritta «Un motivo per sorridere» sul coperchio.</p>
+<p class="sorr-da-confermare">[DA CONFERMARE: come si usa il patch, quando, per quanto tempo e a che cosa serve, con le parole di Martina]</p>
+</div>
+</div>
+<div class="sorr-row">
+<div class="sorr-row-img">
+<figure class="sorr-photo sorr-photo--row">
+<img src="assets/qr_video.jpg" alt="Una bSoullina inquadra con il telefono il QR che porta al video di Martina" width="2304" height="1856" loading="lazy">
+</figure>
+</div>
+<div class="sorr-row-text">
+<h3 class="sorr-h3"><span class="sorr-num">3.</span> Un QR con il mio video</h3>
+<p>Lo trovi dentro il tuo ordine. Lo inquadri con il telefono e arrivi al video in cui ti mostro il rituale di massaggio.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="sorr-sec sorr-sec--white">
+<div class="sorr-wrap">
+<div class="sorr-ritual-grid">
+<div class="sorr-ritual-img">
+<figure class="sorr-photo sorr-photo--tall">
+<img src="assets/rituale_massaggio.jpg" alt="Martina mentre fa il massaggio del Rituale Sorridimi" width="1600" height="2000" loading="lazy">
+</figure>
+</div>
+<div class="sorr-ritual-text">
+<h2 class="sorr-h2">Il rituale: il pezzo che fa funzionare il trattamento</h2>
+<p class="sorr-big">Per me il massaggio è la parte che fa funzionare il trattamento.</p>
+<p class="sorr-big">Per questo nel video faccio il massaggio con te, e lo rifacciamo insieme.</p>
+</div>
+</div>
+<div class="sorr-card sorr-steps-card">
+<p class="sorr-label">Come si fa:</p>
+<ol class="sorr-steps">
+<li><span class="sorr-step-n" aria-hidden="true">1.</span><span class="sorr-step-t">Apri la scatola e inquadra il QR.</span></li>
+<li><span class="sorr-step-n" aria-hidden="true">2.</span><span class="sorr-step-t">Guarda il video: ti faccio vedere il rituale di massaggio.</span></li>
+<li><span class="sorr-step-n" aria-hidden="true">3.</span><span class="sorr-step-t">Poi tocca a te: stesso gesto, con il balsamo Sorridimi, insieme a me.</span></li>
+</ol>
+<p class="sorr-da-confermare">[DA CONFERMARE: ordine esatto dei passaggi (balsamo, massaggio, patch) e quando entra il patch]</p>
+</div>
+<div class="sorr-moment">
+<p class="sorr-big-tight">Ti serve un momento tuo, e basta.</p>
+<p class="sorr-da-confermare">[DA CONFERMARE: durata del rituale, quando farlo (mattina o sera), quante volte e quanto balsamo usare]</p>
+<p class="sorr-da-confermare">[DA CONFERMARE con Martina: il massaggio nel video riguarda solo le labbra o anche il contorno bocca? Finché non è chiaro, "contorno bocca" non compare in pagina]</p>
+</div>
+</div>
+</section>
+<section class="sorr-sec sorr-sec--mid">
+<div class="sorr-wrap sorr-why">
+<div class="sorr-why-img">
+<figure class="sorr-photo sorr-photo--sq">
+<img src="assets/martina_sorride.jpg" alt="Martina sorride" width="1400" height="1400" loading="lazy">
+</figure>
+</div>
+<div class="sorr-why-text">
+<h2 class="sorr-h2">Perché adesso 🎂</h2>
+<p class="sorr-big">Quest'anno bSoul compie 15 anni, e ho voluto festeggiarli con qualcosa pensato per le tue labbra, da cui nasce il sorriso.</p>
+<p class="sorr-big">Sorridimi è un'edizione limitata. La trovi fino a esaurimento scorte.</p>
+<p class="sorr-big-tight">Il prezzo di lancio è 47 €, fino al 29 ottobre.</p>
+<p class="sorr-big">Se ti ispira, non rimandare troppo.</p>
+</div>
+</div>
+</section>
+<section class="sorr-sec sorr-sec--cream">
+<div class="sorr-wrap sorr-narrow">
+<h2 class="sorr-h2">Il Rituale Sorridimi, tutto in un punto</h2>
+<div class="sorr-offer">
+<figure class="sorr-photo sorr-photo--wide">
+<img src="assets/kit_completo.jpg" alt="Il kit completo del Rituale Sorridimi: il balsamo, il patch in silicone, la scatola e il QR" width="1024" height="687" loading="lazy">
+</figure>
+<p class="sorr-label">Dentro la scatola:</p>
+<ul class="sorr-inside">
+<li>Il balsamo intensivo labbra Sorridimi, gusto amarena, flacone da 15 ml (linea Trisoul Pro-Age)</li>
+<li>1 patch in silicone riutilizzabile, in una scatolina di metallo con la scritta "Un motivo per sorridere"</li>
+<li>Il QR con il video di Martina e il rituale di massaggio</li>
+</ul>
+<p class="sorr-bigprice">47 €, prezzo di lancio fino al 29 ottobre</p>
+<p class="sorr-small">Edizione limitata, fino a esaurimento scorte.</p>
+<p class="sorr-btnrow" style="margin-top:28px"><a class="sorr-btn sorr-btn--light" href="#LINK-ACQUISTO">Ordina il Rituale Sorridimi</a></p>
+</div>
+</div>
+</section>
+<section class="sorr-sec sorr-sec--white">
+<div class="sorr-wrap sorr-narrow">
+<h2 class="sorr-h2">Domande frequenti</h2>
+<div class="sorr-faq">
+<details>
+<summary><h3 class="sorr-h3"><span class="sorr-num">1.</span> Cosa c'è dentro la scatola?</h3></summary>
+<div class="sorr-faq-body">
+<p>Il balsamo intensivo labbra Sorridimi, gusto amarena, in un flacone da 15 ml, un patch in silicone riutilizzabile, in una scatolina di metallo, e un QR che porta al video con il rituale di massaggio.</p>
+</div>
+</details>
+<details>
+<summary class="sorr-has-marker"><h3 class="sorr-h3"><span class="sorr-num">2.</span> Devo fare per forza il massaggio?</h3></summary>
+<div class="sorr-faq-body">
+<p>Te lo consiglio: per me è il pezzo che fa funzionare il trattamento. Per questo c'è il video: lo facciamo insieme.</p>
+<p class="sorr-da-confermare">[DA CONFERMARE: durata del rituale]</p>
+</div>
+</details>
+<details>
+<summary class="sorr-has-marker"><h3 class="sorr-h3"><span class="sorr-num">3.</span> Il patch si può riutilizzare?</h3></summary>
+<div class="sorr-faq-body">
+<p>Sì. È in silicone e si lava con acqua e sapone neutro.</p>
+<p class="sorr-da-confermare">[DA CONFERMARE: per quanto tempo dura, quante volte si può riusare, come si conserva]</p>
+</div>
+</details>
+<details>
+<summary><h3 class="sorr-h3"><span class="sorr-num">4.</span> Come lo uso d'inverno e dove lo conservo?</h3></summary>
+<div class="sorr-faq-body">
+<p>Tieni il flacone a temperatura ambiente. In inverno l'erogazione può risultare meno scorrevole: per facilitarla, scalda il flacone tra le mani.</p>
+</div>
+</details>
+<details>
+<summary class="sorr-has-marker"><h3 class="sorr-h3"><span class="sorr-num">5.</span> Che cosa contiene il balsamo?</h3></summary>
+<div class="sorr-faq-body">
+<p>È ricco di burri e ha il gusto amarena. Dentro ci sono peptide Matrixyl synthe'6, burri biologici, ceramidi NP e acido ialuronico.</p>
+<p class="sorr-da-confermare">[DA VERIFICARE: ingredienti indicati da Martina, INCI non visibile sull'etichetta]</p>
+<p class="sorr-da-confermare">[DA CONFERMARE: elenco completo degli ingredienti (INCI), eventuali certificazioni del prodotto (biologico, vegan, nickel tested) e indicazioni per la pelle sensibile]</p>
+</div>
+</details>
+<details>
+<summary><h3 class="sorr-h3"><span class="sorr-num">6.</span> Quanto costa e fino a quando lo trovo?</h3></summary>
+<div class="sorr-faq-body">
+<p>Il prezzo di lancio è 47 €, fino al 29 ottobre. È un'edizione limitata e la trovi fino a esaurimento scorte.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<section class="sorr-sec sorr-sec--dark sorr-closing">
+<div class="sorr-wrap sorr-narrow">
+<h2 class="sorr-h2">Ti aspetto nel video ✨</h2>
+<p>Il Rituale Sorridimi è qui: il balsamo all'amarena, il patch e il mio video, nella stessa scatola.</p>
+<p>Se ti ispira, il link è qui sotto.</p>
+<p class="sorr-btnrow"><a class="sorr-btn sorr-btn--dark" href="#LINK-ACQUISTO">Ordina il Rituale Sorridimi</a></p>
+<p class="sorr-sign">Un abbraccio,</p>
+<p class="sorr-sign">Martina</p>
+</div>
+</section>
+</div>
+</div>
+</body>
+</html>
